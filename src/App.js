@@ -2,14 +2,8 @@ import React, { Component } from 'react';
 import marked from 'marked';
 import './App.css';
 
-// insta update iz Textarea v Previewer: handleInput -> state.input: e.target.input -- OK
 // GIT markdown https://cdnjs.cloudflare.com/ajax/libs/marked/0.6.1/marked.js
-// on load componentDidMount(): a header (H1 size), a sub header (H2 size), a link, inline code, a code block, a list item, a blockquote, an image, and bolded text.
-// on load render v HTML
 
-// opcijski bonus:
-// opcijski bonus: odpira linke v preview-u
-// carriage returns?? render as <br>
 const renderMarked = new marked.Renderer();
 renderMarked.link = function (href, title, text) {
   return `<a target="_blank" href="${href}">${text}</a>`;
@@ -40,11 +34,9 @@ export class Textarea extends Component {
 
  function Previewer(props) {
   return (
-    <div className="preview" id="preview">
+    <div className="preview">
       <div className="previewer-title"><h3 className="text-white"><i className="far fa-eye"></i> Previewer</h3></div>
-      <div className="previewer text-left" id="renderhtml" dangerouslySetInnerHTML={{__html: marked(props.preview, { renderer: renderMarked })}} />
-      {//</div>
-      }
+      <div id="preview" className="previewer text-left" dangerouslySetInnerHTML={{__html: marked(props.preview, { renderer: renderMarked })}} />
     </div>
   );
 }
