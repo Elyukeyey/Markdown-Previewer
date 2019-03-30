@@ -8,12 +8,32 @@ body {
 .wrapper {
   max-width: 800px;
   margin: auto;
-  padding-top: 20px;
+  margin-top: 20px;
 }
 .textarea {
   border-radius: 0;
 }
+.preview {
+  margin-top: 20px;
+}
 .previewer {
+  background-color: #eee;
+  padding: 10px 15px;
+}
+.infolink {
+  margin-top: 10px;
+}
+pre {
+  color: #e83e8c;
+}
+ul {
+  margin-left: 15px;
+}
+blockquote {
   background-color: #fff;
-  margin-top: 10px !important;
+  padding: 10px;
+}
+img {
+  width: 100px;
+  height: auto;
 }
