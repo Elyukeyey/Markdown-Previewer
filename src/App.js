@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import marked from 'marked';
 import './App.css';
 
-// GIT markdown https://cdnjs.cloudflare.com/ajax/libs/marked/0.6.1/marked.js
+// GIT markdown: https://cdnjs.cloudflare.com/ajax/libs/marked/0.6.1/marked.js
 
 const renderMarked = new marked.Renderer();
 renderMarked.link = function (href, title, text) {
@@ -12,25 +12,24 @@ marked.setOptions({
   breaks: true
 })
 
-export class Textarea extends Component {
-  
-  render() {
+function Textarea(props) {
     return (
       <div>
-        <div>
+        {//<div>
+        }
         <div className="editor-title"><h3 className="text-white"><i className="fas fa-code"></i> Editor</h3></div>
         <textarea 
           className="textarea form-control"
           rows="10" 
           id="editor" 
           name="textarea" 
-          onChange={this.props.handleInput} 
-          defaultValue={this.props.markdown}></textarea>
-        </div>    
+          onChange={props.handleInput} 
+          defaultValue={props.markdown}></textarea>
+        {//</div>
+        }    
       </div>
     )
   }
-}
 
  function Previewer(props) {
   return (
@@ -45,7 +44,7 @@ class App extends Component {
   state = {
     // eslint-disable-next-line
     markdown: presup,
-    preview: `e?`
+    preview: ``
   } 
   handleInput = (e) => {
     this.setState({
